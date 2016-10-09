@@ -1,1 +1,1 @@
-This project was created to teach Turtle Graphics in Python
+This project was created to teach Turtle Graphics in Python. Different progs for all levels.
