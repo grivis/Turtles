@@ -1,7 +1,11 @@
+from functools import reduce
 f = open('TheText', 'r', encoding='utf8')
 text = f.read()
 
 replacedic = {',':'', '.':'', '-':' ', ';':''}
+# textplain = reduce(lambda letter: replacedic.get(letter, letter), text, '')
+# print(textplain)
+
 textplain = ''
 for letter in text:
     ltr = replacedic.get(letter, letter)
