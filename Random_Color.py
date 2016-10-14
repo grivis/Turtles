@@ -53,7 +53,6 @@ def make_flower(t, func):
         t.home()
         t.left(360/loops * i)
         t.forward(15)
-        #circle(t)
         func(t)
 
 
@@ -63,16 +62,16 @@ alex.shape('turtle')
 alex.speed(0)
 alex.hideturtle()
 
-## Make a starter circle
-circle(alex)
-alex.forward(10)
+# ## Make a starter circle
+# circle(alex)
+# alex.forward(10)
 
 ## Make some random spirals
-make_spirals(alex)
+#make_spirals(alex)
 
-## Make a flower
+# ## Make a flower
 make_flower(alex, spiral)
-make_flower(alex, circle)
+# make_flower(alex, circle)
 
 alex.showturtle()
 alex.home()
