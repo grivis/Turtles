@@ -1,10 +1,8 @@
 from functools import reduce
-f = open('TheText', 'r', encoding='utf8')
+f = open('Text2', 'r', encoding='utf8')
 text = f.read()
 
 replacedic = {',':'', '.':'', '-':' ', ';':''}
-# textplain = reduce(lambda letter: replacedic.get(letter, letter), text, '')
-# print(textplain)
 
 textplain = ''
 for letter in text:
@@ -19,23 +17,22 @@ text = textplain
 
 
 textwords = text.split()
-#print(textwords)
 textwordsnew = []
 
 
 for word in textwords:
-    fl = word[0]
-    ll = word[-1:]
-    middle = word[1:-1]
-    #print(fl, middle, ll)
-    scramble = middle[::-1]
-    #print(fl, scramble, ll)
-    newword = fl + scramble + ll
-    #print(newword)
+    if len(word) > 4:
+        fl = word[0]
+        ll = word[-1:]
+        middle = word[1:-1]
+        # scramble = middle[::-1]
+        scramble = middle[-1:] + middle[1:-1] + middle[1]
+        newword = fl + scramble + ll
+    else:
+        newword = word
     textwordsnew.append(newword)
 
 
-#print(textwordsnew)
 newtext = ''
 for word in textwordsnew:
     newtext += word + ' '
