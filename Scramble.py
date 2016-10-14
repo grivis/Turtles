@@ -1,11 +1,17 @@
 f = open('TheText', 'r', encoding='utf8')
 text = f.read()
 
+replacedic = {',':'', '.':'', '-':' ', ';':''}
+textplain = ''
+for letter in text:
+    ltr = replacedic.get(letter, letter)
+    textplain += ltr
+text = textplain
 
-text = text.replace(',', '')
-text = text.replace('.', '')
-text = text.replace('-', ' ')
-text = text.replace(';', '')
+# text = text.replace(',', '')
+# text = text.replace('.', '')
+# text = text.replace('-', ' ')
+# text = text.replace(';', '')
 
 
 textwords = text.split()
